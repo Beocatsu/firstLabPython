@@ -1,2 +1,9 @@
-with open('textfile_1.txt', 'tw', encoding='utf-8') as f:
-    wtf
+#поддерживает форматы:
+#(+7/8)хххххххххх (+7/8)(ххх)ххххххх (+7/8)(ххх)ххх-хх-хх (+7/8) ххх ххх-хх-хх
+#9ххххххххх (9хх)ххххххх (9хх)ххх-хх-хх 9хх ххх-хх-хх
+import re
+handle=open('textfile_1.txt', 'tr')
+data = handle.read()
+print(data)
+print(re.findall("(?:((?:\+7|8)[ (]?\d{3}[ )]?\d{3}(?:[-]?\d{2}){2})|([(]?9\d{2}[ )]?\d{3}(?:[-]?\d{2}){2}))", data))
+handle.close()
