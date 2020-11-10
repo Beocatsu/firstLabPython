@@ -3,7 +3,7 @@
 #9ххххххххх (9хх)ххххххх (9хх)ххх-хх-хх 9хх ххх-хх-хх
 import re
 handle=open('textfile_1.txt', 'tr')
-data = handle.read()
-print(data)
-print(re.findall("(?:((?:\+7|8)[ (]?\d{3}[ )]?\d{3}(?:[-]?\d{2}){2})|([(]?9\d{2}[ )]?\d{3}(?:[-]?\d{2}){2}))", data))
+handle2=open('textfile_2.txt', 'tw')
+handle2.write(str(re.findall("(?:(?:(?:\+7|8)[ (]?\d{3}[ )]?\d{3}(?:[-]?\d{2}){2})|(?:[(]?9\d{2}[ )]?\d{3}(?:[-]?\d{2}){2}))", handle.read())))
 handle.close()
+handle2.close()
